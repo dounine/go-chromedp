@@ -1,0 +1,5 @@
+.idea
+tmp
+main
+logs/
+**/gorm.db

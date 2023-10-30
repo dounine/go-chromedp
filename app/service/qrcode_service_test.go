@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
+	qrcodeTerminal "github.com/Baozisoftware/qrcode-terminal-go"
 	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/cdproto/runtime"
 	"github.com/chromedp/chromedp"
@@ -113,4 +114,8 @@ func TestQrcodeService_QrcodeGet(t *testing.T) {
 	assert.NoError(err)
 	assert.NotEmptyf(context, "context is empty")
 	assert.Equal(strings.HasPrefix(*context, "http://mp.weixin.qq.com"), true)
+}
+func TestQrcodeUrlToTerminalShow(t *testing.T) {
+	obj := qrcodeTerminal.New2(qrcodeTerminal.ConsoleColors.BrightWhite, qrcodeTerminal.ConsoleColors.BrightGreen, qrcodeTerminal.QRCodeRecoveryLevels.Low)
+	obj.Get([]byte("https://baidu.com")).Print()
 }

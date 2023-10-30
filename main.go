@@ -3,15 +3,20 @@ package main
 import (
 	"context"
 	"encoding/base64"
+	qrcodeTerminal "github.com/Baozisoftware/qrcode-terminal-go"
 	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/cdproto/runtime"
 	"github.com/chromedp/chromedp"
 	"github.com/duke-git/lancet/v2/fileutil"
 	"strings"
-	"time"
 )
 
 func main() {
+	obj := qrcodeTerminal.New2(qrcodeTerminal.ConsoleColors.BrightWhite, qrcodeTerminal.ConsoleColors.BrightBlack, qrcodeTerminal.QRCodeRecoveryLevels.Low)
+	obj.Get([]byte("https://baidu.com")).Print()
+	if true {
+		return
+	}
 	//cmd.Execute()
 	ctx, cancel := chromedp.NewContext(context.Background())
 	defer cancel()
@@ -22,7 +27,6 @@ func main() {
 		chromedp.Flag("no-sandbox", true),
 		chromedp.Flag("disable-dev-shm-usage", true),
 	)
-
 	allocExt, cancel := chromedp.NewExecAllocator(ctx, opts...)
 	defer cancel()
 
@@ -97,9 +101,4 @@ func main() {
 	fileutil.WriteBytesToFile("./qrcode.png", arrayBufferBytes)
 	//fmt.Println(strings.Replace(result, "data:image/jpg;base64,", "", -1))
 	//middleware.Logger.Infof("qrcodeUrl: %s", *qrcodeUrl)
-
-	time.Sleep(10 * time.Minute)
-	if err != nil {
-		panic(err)
-	}
 }

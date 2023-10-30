@@ -31,6 +31,7 @@ require (
 )
 
 require (
+	github.com/Baozisoftware/qrcode-terminal-go v0.0.0-20170407111555-c0650d8dff0f // indirect
 	github.com/agiledragon/gomonkey/v2 v2.2.0 // indirect
 	github.com/bytedance/sonic v1.10.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
@@ -61,7 +62,8 @@ require (
 	github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/maruel/rs v1.1.0 // indirect
-	github.com/mattn/go-isatty v0.0.19 // indirect
+	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-sqlite3 v1.14.17 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect

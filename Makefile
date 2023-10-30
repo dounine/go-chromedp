@@ -1,4 +1,4 @@
-APP="autodump"
+APP="chromedp"
 .PHONY: clean build run
 PID=/tmp/.$(APP)-server.pid
 
